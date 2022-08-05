@@ -1,0 +1,180 @@
+body {
+    font-family: 'Titan One', cursive;
+    text-align: center;
+    font-size: 30px;
+  }
+
+ /* center the container and imply margins */
+ .container {
+  padding: 0 15px;
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+}
+
+.title {
+  margin-top: 5vh;
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.title > h1 {
+  text-shadow: 10px 10px 0 rgb(190, 177, 177);
+  font-size: 100px;
+}
+
+.toDoForm {
+  margin-right: 6.5em;
+}
+
+/* Modernize buttons and input */
+input {
+  width: 400px;
+  padding: 1em;
+  margin-right: 1em;
+  font-size: 1em;
+  font-family: 'Titan One', cursive;
+}
+
+::placeholder {
+  color: rgb(239, 198, 198);
+}
+
+button {
+  position: absolute;
+  margin-bottom: 1em;
+  padding: 0.75em 2em;
+  border-radius: .5em;
+  font-size: 1.2em;
+  font-family: 'Titan One', cursive;
+  color: rgb(210, 40, 68);
+  background: linear-gradient(rgb(232, 145, 145) 10%, 45%, rgba(239, 154, 205, 0.75) 90%);
+  cursor: pointer;
+}
+
+  button:hover {
+    opacity: 0.67;
+    animation:grow 1s forwards;
+  }
+
+  @keyframes grow {
+    100% {
+      font-size: 1.6em;
+      border-radius: 100%;
+      padding: 0.40em 1.01em;
+    }
+  }
+
+  button:active {
+    opacity: 1;
+
+  }
+  
+    /* make the div with the id lists into a flex container */
+  .lists {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+
+  @media (min-width: 800px) {
+    .lists {
+    flex-direction: row;
+    }
+  }
+
+  .lists div {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 40%;
+    margin: 1em;
+  }
+  
+  .lists ul {
+    list-style-type: none;
+  }
+  
+  .toDoItem, .doneItem {
+    margin: .5em;
+    border-radius: 4%;
+    box-shadow: 2px 2px 4px rgb(203, 148, 180);
+    padding: 5px 8px;
+  }
+  
+  .task-container {
+    position: relative;
+  }
+  
+  .wellDone::after {
+    position: absolute;
+    content: "  🎉";
+    left: 50px;
+    top: -250px;
+    animation: spin 1.49s cubic-bezier(.01,1,.77,.85);
+  }
+  
+  @keyframes spin {
+   from {font-size: 0; }
+   to {font-size: 400px;}
+  }
+
+
+  .toDoItem {
+    background: #e7869b;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .toDoItem:hover, .doneItem:hover {
+	          animation:shaking 1s infinite;
+  }
+
+  @keyframes shaking {
+    0% { transform: translate(0px, 0px) rotate(0deg); }
+    10% { transform: translate(-3px, -3px) rotate(1deg); }
+    20% { transform: translate(-5px, -1px) rotate(-1deg); }
+    30% { transform: translate(-2px, 1px) rotate(0deg); }
+    40% { transform: translate(-1px, -2px) rotate(1deg); }
+    50% { transform: translate(-3px, 1px) rotate(-1deg); }
+    60% { transform: translate(-5px, 0px) rotate(0deg); }
+    70% { transform: translate(0px, 0px) rotate(1deg); }
+    80% { transform: translate(-3px, -2px) rotate(-1deg); }
+    90% { transform: translate(0px, 1px) rotate(0deg); }
+    100% { transform: translate(-1px, -3px) rotate(1deg); }
+  }
+
+  .toDoItem:hover::after {
+    content: "\2713";
+    width: 25px;
+    height: 29px;
+    background: #f11606;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-top-right-radius: 4%;
+  }
+  
+  .doneItem {
+    background: #e9b760;
+    position: relative;
+  }
+
+  .doneItem:hover {
+    cursor: pointer;
+    text-decoration: line-through 5px red;
+  }
+
+  .doneItem:hover::after {
+    content: "🗑⁇";
+    width: 65px;
+    height: 38px;
+    background: #f5f1e4;
+    position: absolute;
+    right: 38%;
+    top: -85%;
+    border-top-right-radius: 4%;
+}

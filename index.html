@@ -1,0 +1,36 @@
+<head>
+    <link rel="stylesheet" href="main.css">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;900&family=Titan+One&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+      <div class="title">
+        <h1 contenteditable>To Do List</h1>
+      </div>
+
+    <div class="container">
+        <form class="toDoForm">
+            <label for="inputBox"></label>
+            <input type="text" id="inputBox" placeholder="Enter to-do here...">
+            <button type="submit" name="button" id="submit">Add</button>
+        </form>
+        <div class="lists">
+            <div class="task-container">
+                <h2 class="task">Task - <span class="toDoCount">0</span></h2>
+                <ul class="toDoList">
+                </ul>
+            </div>
+            <div>
+                <h2>Done - <span class="completedToDoCount">0</span></h2>
+                <ul class="completedList">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="main.js" defer></script>
+</body>
